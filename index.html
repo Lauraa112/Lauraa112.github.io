@@ -1,27 +1,204 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Mi primera web</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      text-align: center;
-      margin: 0;
-      padding: 50px;
-    }
-    h1 {
-      color: #333;
-    }
-    p {
-      font-size: 18px;
-      color: #555;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mi web — Nombre</title>
+  <meta name="description" content="Página personal / profesional con diseño oscuro. Contacto y teléfono visible." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>¡Hola, mundo!</h1>
-  <p>Esta es mi primera página web con GitHub Pages 🚀</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#">MiNombre</a>
+      <nav class="nav" id="nav">
+        <a href="#home">Inicio</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#services">Servicios</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1>Diseño limpio, oscuro y profesional</h1>
+          <p class="lead">Página personal / landing profesional. Rápida, accesible y optimizada para GitHub Pages.</p>
+          <div class="hero-cta">
+            <a class="btn" href="#contact">Contáctame</a>
+            <a class="btn ghost" href="#about">Ver más</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Contacto rápido</h3>
+          <p class="phone" id="phone-number">+34 600 00 00 00</p>
+          <div class="phone-actions">
+            <a class="btn small" href="tel:+34600000000">Llamar</a>
+            <button class="btn small outline" id="copy-btn" title="Copiar número">Copiar</button>
+          </div>
+          <p class="note">Haz clic en <strong>Llamar</strong> desde el móvil o copia el número para guardarlo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>Sobre mí</h2>
+      <div class="grid-2">
+        <div>
+          <p>Soy estudiante/profesional y aquí muestro mis proyectos y servicios. Este sitio está construido con HTML, CSS y un poco de JavaScript — fácil de alojar en GitHub Pages.</p>
+          <ul class="list">
+            <li>Portafolio / CV</li>
+            <li>Servicios freelance</li>
+            <li>Contacto directo y rápido</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card about-stats">
+            <div>
+              <strong>20+</strong>
+              <span>Proyectos</span>
+            </div>
+            <div>
+              <strong>3k</strong>
+              <span>Visitas (ej.)</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>Responsivo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section container">
+      <h2>Servicios</h2>
+      <div class="grid-3">
+        <article class="service">
+          <h3>Desarrollo Web</h3>
+          <p>Creación de páginas estáticas, portfolios y landing pages rápidas.</p>
+        </article>
+        <article class="service">
+          <h3>Diseño UI/UX</h3>
+          <p>Interfaces limpias y usables con experiencia enfocada en conversión.</p>
+        </article>
+        <article class="service">
+          <h3>Soporte GitHub Pages</h3>
+          <p>Subida, configuración de dominios y certificados HTTPS gratuitos.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2>Contacto</h2>
+        <div class="grid-2 contact-grid">
+          <form class="contact-form" onsubmit="event.preventDefault(); alert('El formulario no envía en GitHub Pages (es estático). Usa el número o un servicio de terceros como Formspree.')">
+            <label>
+              Nombre
+              <input type="text" name="name" placeholder="Tu nombre" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="tu@email.com" required>
+            </label>
+            <label>
+              Mensaje
+              <textarea name="message" rows="5" placeholder="Escribe tu mensaje" required></textarea>
+            </label>
+            <div class="form-actions">
+              <button type="submit" class="btn">Enviar (demo)</button>
+            </div>
+          </form>
+
+          <aside class="contact-aside">
+            <h3>Teléfono</h3>
+            <p class="phone large" id="phone-number-2">+34 600 00 00 00</p>
+            <div class="phone-actions">
+              <a class="btn" href="tel:+34600000000">Llamar</a>
+              <button class="btn outline" id="copy-btn-2">Copiar número</button>
+            </div>
+
+            <h3>Redes</h3>
+            <div class="socials">
+              <a href="#" aria-label="Twitter">Twitter</a>
+              <a href="#" aria-label="LinkedIn">LinkedIn</a>
+              <a href="#" aria-label="GitHub">GitHub</a>
+            </div>
+            <p class="small muted">Si quieres que el formulario envíe, puedo añadir integración con Formspree/Netlify Forms o un script que guarde resultados en Google Sheets.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> MiNombre. Todos los derechos reservados.</p>
+      <p class="muted small">Sitio alojado en GitHub Pages — HTTPS automático disponible.</p>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast" aria-hidden="true"></div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('nav');
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+    });
+
+    // Copy to clipboard (two buttons)
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.setAttribute('aria-hidden', 'false');
+      t.classList.add('visible');
+      setTimeout(() => { t.classList.remove('visible'); t.setAttribute('aria-hidden','true'); }, 2200);
+    }
+
+    async function copyNumber(number) {
+      try {
+        await navigator.clipboard.writeText(number);
+        showToast('Número copiado al portapapeles');
+      } catch (e) {
+        // fallback
+        const tmp = document.createElement('input');
+        tmp.value = number;
+        document.body.appendChild(tmp);
+        tmp.select();
+        document.execCommand('copy');
+        document.body.removeChild(tmp);
+        showToast('Número copiado (fallback)');
+      }
+    }
+
+    document.getElementById('copy-btn').addEventListener('click', () => {
+      copyNumber('+34600000000');
+    });
+    document.getElementById('copy-btn-2').addEventListener('click', () => {
+      copyNumber('+34600000000');
+    });
+
+    // Smooth scroll for anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
